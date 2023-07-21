@@ -6,8 +6,93 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>애니메이션1</title>
+    <style>
+        #btn1 {
+            background: aqua;
+            width: 100px; height: 150px; border-radius: 10%;
+            border: 5px solid #000;
+            /* transition:애니메이션 적용속성 지속시간; */ 
+            /* 대상 자체한테 transition에게 해줘야한다 */
+            /* transition:background 0.5s, width 0.8s; */ /* 시간과 크기등 속성이 다르면 "," 으로 구분해서 쓴다 */   
+            /* 1s는 1초 */
+            transition:all 0.5s; /* 지속시간이 모든 속성에 일치할때는 "all" */
+            position: relative; lefe:0;   /*  */
+        }
+        #btn1:hover {
+            border: 10px solid #00f; padding: 30px;  /* border 테두리선 만들기 */
+            background: pink; border-radius:50%;     /* border-redius는 테두리라인 모양 */        
+            width: 150px; height: 200px;
+            left: 100px;
+        }  /* hover는 올렸을때 */
+
+        #btn2 {
+            width: 100px;
+            transition: width 1s ease 0.5s, 
+            height 2s linear 1s ;  /* 0.5s 후에 1s 움직인다 */ /* 시간을 두개쓰면 뒤에 쓰는 시간만큼 지연된다. */
+            
+        }
+        #btn2:hover {
+            width: 200px;
+            height: 50px;
+        }
+        /* transform 연습 */
+        #btn3 {
+            padding: 10px; } 
+        #btn3:hover ~.box {background: pink;
+            /* transform:속성(값) 속성(값) */
+            /* transform 속성은 자식,자손에게도 영향을 준다. */
+            /* transform:scaleX(2) scaleY(0.5); */ /* scale X,Y는 X,Y축 */      /* 1은 100%, 2는 200% 를 인식한다. */ 
+            /* transform: rotate(60deg) scaley(1.5); */ /* 시계방향으로 돌고 "-"로 넣으면 시계반대 방향 */
+            /* transform:skew(60deg); */  /* 60deg, -40deg는x,y 값을 동시에 적을때  */
+            transform:translatex(200px);
+            
+
+        
+        }  /* "+" 가까운 첫번째 형제, "~"" 형제들중 */
+        
+        /* btn3에 마우스를 올렸을때 그 형제 box가 변경된다. */
+        .box {
+            width: 100px; height:100px;
+            background: yellow;
+            transition: transform 0.5s;  /* box가 바꿔야하기 때문에 바뀌는 상대에게 적어준다 */
+        }
+
+        #btn4 {}
+        .target {
+            display: block;
+            transition: all 0.5s;
+            width: 100px; height:100px;
+            background: #222; border-radius: 10%;
+            } 
+
+        #btn4:hover ~ .target {
+            background: orangered;
+            /* transform-origin: center bottom;  */
+            transform:rotate(60px);          
+            
+        }
+
+    </style>
 </head>
 <body>
-    
+    <ul>
+        <li>
+            <button id="btn1">animation1</button>
+        </li>
+        <li>
+            <button  id="btn2" type="button">animation2</button>  <!-- button를 범용적(여러용도)으로 쓸때는 type에 button으로 적는다. -->
+        </li>
+        <li>
+            <button id="btn3" type="button">transform1</button> 
+            <hr>
+            <div class="box">box</div>
+        </li>
+        <li>
+            <button id="btn4" type="button">transform2</button>
+            <hr>
+            <span class="target">적용대상</span>
+        </li>
+        <li></li>
+    </ul>
 </body>
 </html>
