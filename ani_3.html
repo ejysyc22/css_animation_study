@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="keywords" content="">
+    <title>ani_3</title>
+    <style>
+        main {display: flex; flex-flow: column nowrap;}
+        main #btn {cursor:pointer;
+        
+        }  /* 마우스가 손가락 모양으로 바뀐다 */
+         /* 1. 버튼에 마우스를 올렸을 때 target1 배경색 변경 */
+        main #btn:hover +.target1 {
+            background: greenyellow;
+        }     
+        
+        main span {width: 100px; height:100px; background: lightblue; padding: 10px;}
+
+        main .target1 {transition:background 1s 0.5s;} /* 1s 진행시간 0.5s 딜레이되는 시간  */
+        main .target2 {animation:right500 1s linear 4 alternate-reverse ;     /*  alternate는 재생횟수가 짝수여야 자연스럽게 끝난다.*/
+                                                                             /* alternate-reverse는 재생횟수가 홀수여야 자연스럽게 끝난다  */
+        }    
+        main .target3 {}
+        main .target4 {}
+        main .target5 {}
+        /* animation + @keyframes */   
+        @keyframes  right500 {
+            0% {transform:translateX(0);}
+            100% {transform:translateX(500px);}
+        }
+        /* keyframes 작성 위치는 style 맨아래 또는 외부스타일 분리(보통 외부스타일) */
+
+        /* 1. 사용자가 원하는 애니메시녀 시작-끝 장면 정하기 */
+        /* 2. 해당 장면에 어울리는 이름으로 @keyframes 생성 */
+        /* 3. 적용 대상에 animation 속성으로 @keyframes 불러오기 */
+
+
+    </style>
+</head>
+<body>
+    <main>
+        <button id="btn">적용버튼</button>
+        <span class="target1">1</span>
+        <span class="target2">2</span>
+        <span class="target3">3</span>
+        <span class="target4">4</span>
+        <span class="target5">5</span>
+        
+    </main>
+</body>
+</html>
