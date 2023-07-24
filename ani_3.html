@@ -19,17 +19,36 @@
         main span {width: 100px; height:100px; background: lightblue; padding: 10px;}
 
         main .target1 {transition:background 1s 0.5s;} /* 1s 진행시간 0.5s 딜레이되는 시간  */
-        main .target2 {animation:right500 1s linear 4 alternate-reverse ;     /*  alternate는 재생횟수가 짝수여야 자연스럽게 끝난다.*/
-                                                                             /* alternate-reverse는 재생횟수가 홀수여야 자연스럽게 끝난다  */
+        main .target2 {animation:right500 1s linear 3 alternate both;     
+            
+            /*  alternate는 재생횟수가 짝수여야 자연스럽게 끝난다.*/
+            /* alternate-reverse는 재생횟수가 홀수여야 자연스럽게 끝난다  */
+        /* forwards 마지막 횟수 위치에서 정지한다. both 정지위치를 만들어준다.  */                                                               
         }    
-        main .target3 {}
-        main .target4 {}
+        main .target3 {animation:left_top_right 1s 4 both;
+                        border-radius: 50%;            
+        }
+        main .target4 {animation:opacity}
         main .target5 {}
         /* animation + @keyframes */   
         @keyframes  right500 {
             0% {transform:translateX(0);}
             100% {transform:translateX(500px);}
         }
+
+        @keyframes left_top_right  {
+            0% {transform: translate(0, 0);}
+            50% {transform: translate(250px, -100px);}
+            100% {transform: translate(500px, 0);
+            background: red;}
+        }
+
+        @keyframes opacity{
+            0% {opacity:0; font-size: 1rem;}
+            100% {opacity:1; font-size:3rem;}
+
+        } 
+        
         /* keyframes 작성 위치는 style 맨아래 또는 외부스타일 분리(보통 외부스타일) */
 
         /* 1. 사용자가 원하는 애니메시녀 시작-끝 장면 정하기 */
