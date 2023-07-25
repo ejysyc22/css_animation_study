@@ -40,24 +40,49 @@ main .bg_wrap .bg {width:1400px; margin:0 auto;}
 main .bg_wrap .bg1 {
     height:100px; 
     background:url(../images/bg_cloud.png) repeat-x;
+    animation:bg 10s linear infinite ;
 }
 main .bg_wrap .bg2 {
     height:200px; 
-    background:url(../images/bg_city1.png) repeat-x;
+    background:url(../images/bg_city1.png) repeat-x; /* x측에 반복해라 */
+    animation:bg 5s linear infinite;
 }
 main .bg_wrap .bg3 {
     height:100px; position:relative; top:-96px;
     background:url(../images/bg_city2.png) repeat-x;
+    animation:bg 3s linear infinite;
 }
 /* 메인제목 */
 main .txt {}
 /* 메인 자동차 위 리스트3 */
 /* 메인 자동차 */
 main .car {margin-top:150px; text-align:center; width:600px;}
-main .car #car {width:100%;}
+main .car #car {width:100%; 
+}
 main .car #left_tire, main .car #right_tire {
     position:absolute; bottom:25px; width:67px;
+    animation:rotate 1s linear infinite ;
 }
-main .car #left_tire {left:102px;}
+main .car #left_tire {left:102px;
+}
 main .car #right_tire {right:91px;}
 
+main .scroll  {
+    animation:mous 1s linear alternate infinite;
+}
+
+/* @keyframes */
+@ketframes rotate {
+    0% {transform:rotate(0)}
+    100% {transform:rotate(360deg)} 
+}
+
+@ketframes bg {
+    0% {background-position:0 0;}
+    100% {background-position:100px 0;}
+}
+
+@keyframes mouse {
+    0% {transform: translateY(-30px);}
+    100% {transform: translateY(0px);}
+}

@@ -8,9 +8,7 @@
     <title>ani_3</title>
     <style>
         main {display: flex; flex-flow: column nowrap;}
-        main #btn {cursor:pointer;
-        
-        }  /* 마우스가 손가락 모양으로 바뀐다 */
+        main #btn {cursor:pointer;}  /* 마우스 커서가 손가락 모양으로 바뀐다 */
          /* 1. 버튼에 마우스를 올렸을 때 target1 배경색 변경 */
         main #btn:hover +.target1 {
             background: greenyellow;
@@ -20,10 +18,10 @@
 
         main .target1 {transition:background 1s 0.5s;} /* 1s 진행시간 0.5s 딜레이되는 시간  */
         main .target2 {animation:right500 1s linear 3 alternate both;     
-            
-            /*  alternate는 재생횟수가 짝수여야 자연스럽게 끝난다.*/
-            /* alternate-reverse는 재생횟수가 홀수여야 자연스럽게 끝난다  */
-        /* forwards 마지막 횟수 위치에서 정지한다. both 정지위치를 만들어준다.  */                                                               
+        
+        /*  alternate는 재생횟수가 짝수여야 자연스럽게 끝난다.*/
+        /* alternate-reverse는 재생횟수가 홀수여야 자연스럽게 끝난다 */
+        /* forwards 마지막 횟수 위치에서 정지한다. both 정지위치를 만들어준다  */                                                               
         }    
         main .target3 {animation:left_top_right 1s 4 both;
                         border-radius: 50%;            
@@ -43,10 +41,9 @@
             background: red;}
         }
 
-        @keyframes opacity{
+        @keyframes opacity {
             0% {opacity:0; font-size: 1rem;}
             100% {opacity:1; font-size:3rem;}
-
         } 
         
         /* keyframes 작성 위치는 style 맨아래 또는 외부스타일 분리(보통 외부스타일) */

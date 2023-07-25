@@ -1,0 +1,10 @@
+/* @keyframes */
+@ketframes rotate {
+    0% {transform:rotate(0)}
+    100% {transform:rotate(360deg)} 
+}
+
+@ketframes bg {
+    0% {background-position:0 0;}
+    100% {background-position:100px 0;}
+}
